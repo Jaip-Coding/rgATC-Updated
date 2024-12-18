@@ -1,0 +1,227 @@
+Changelog 2.3.0 - 7 May 2021
+
+- [RedGriffin] Added option "Open dialog at startup" in settings
+- [RedGriffin] Added option "ATC text position" in settings
+- [RedGriffin] Added option "ATC text transparency" in settings
+- [RedGriffin] Added support for multiple transponders
+- [RedGriffin] Radio frequencies now uses a three decimal digits resolution
+- [RedGriffin] Add airport city name to radio station name in case it is missing
+- [RedGriffin] Added ATC log window
+- [RedGriffin] Altitude check warning now uses a variable time according to aircraft
+               type, current and target altitude
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+Changelog 2.2.0 - 6 March 2021
+
+- [RedGriffin] Voices are now assigned at random from the whole pool of voices available in the property tree.
+               This will give the sensation of speaking to different operators, especially when used with
+               festival server and providing a fairly good number of different voices with custom properties
+               in /sim/sound/voices/voice[x].
+               Pilot voice is always assigned to the voice having in the description the tag "pilot". This voice
+               is exclusively assigned to the pilot and excluded from the pool of random voices.
+- [RedGriffin] Added support for festival server. In case /sim/sound/voices/voice[x]/festival is true and
+               festival is initialized with audio async mode (audio_mode 'async) in
+               sound/sim/sound/voices/voice[x]/preamble, Red Griffin ATC will split text in multiple parts and
+               send them all in sequence to festival in order to provide a quicker response (actually, creating
+               utterances while speaking), otherwise text is sent to the speech synthetizer (internal flite-hts
+               or festival) in just one string.
+- [RedGriffin} Improved algorithm in getApproachingRunway() to determine the right runway in case of
+               parallel runways
+- [RedGriffin] Changed most of getprop and setprop to Nasal global.props functions
+- [RedGriffin] Improved COM radio detection and usability
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+Changelog 2.1.0 - 2 January 2021
+
+- [RedGriffin] Added menubar item "on/off"
+- [RedGriffin] Improved "too low" and "towards terrain" warnings
+- [RedGriffin] Added squawking
+- [RedGriffin] Weather information is now completely based on user settings (live-data or scenario preset)
+- [RedGriffin] Added information identification to departure information
+- [RedGriffin] Added approach slope angle to settings
+- [RedGriffin] Added aircraft type auto detection to settings according to /sim/tags
+- [RedGriffin] Altitude of approach point is now determined according to the slope angle
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+Changelog 2.0.0 - 7 November 2020
+
+- [RedGriffin] Production release
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+Changelog 2.0.0 beta 1 - 4 October 2020
+
+- [RedGriffin] Added "Wind calm" message in case wind speed is zero
+- [RedGriffin] Moved "Departure Information" button to position 2 when Aircraft is not near runway
+- [RedGriffin] Main dialog window now shows version
+- [RedGriffin] Changed some Pilot/ATC messages for a more complete and clear take off/approach/landing procedure
+- [RedGriffin] "Ready for Departure" button changes to "Abort Departure" when cleared for take off
+- [RedGriffin] Warnings "too low" and "towards terrain" are now issued only in case radio is tuned to the CTR radio
+- [RedGriffin] In case aircraft enters a CTR without approval, ATC issues a warning if radio is tuned to the CTR radio
+- [RedGriffin] Added "ATC Radio" mode Auto/COM1/COM2/COM3 to settings
+- [RedGriffin] Added "too low" and "terrain" warnings On/Off to settings
+- [RedGriffin] Added assistedAtcApproach() to let the Atc assist and provide instructions to the aircraft when approaching an airport
+- [RedGriffin] Added "Aircraft type" setting in order to "fine tune" specific operational values
+- [RedGriffin] Added "Multiplay chat" setting support to send ATC messages to chat
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+Changelog 1.4.0 - 16 May 2020
+
+- [RedGriffin] Added "Include Manufacturer" in settings
+- [RedGriffin] Pilot messages are now spoken via /sim/sound/voice/pilot property
+- [RedGriffin] Added "Pilot message mode" in settings
+- [RedGriffin] Added "Pilot response mode" in settings
+- [RedGriffin] Added "ATC message mode" in settings
+- [RedGriffin] Added "R" button and corresponding key binding to repeat the last ATC message
+- [RedGriffin] Callsign in settings is now written to both /sim/multiplay/callsign and
+               /sim/user/callsign properties
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+Changelog 1.3.0 - 3 May 2020
+
+- [RedGriffin] getRadioType(): "radio" pattern is associated to tower if nothing else applies
+- [RedGriffin] Dialog can now be opened to any corner of the screen. Defaults to bottom-left position.
+- [RedGriffin] Added del() overload to dlgWindow to properly manage dialog status
+- [RedGriffin] Added settings dialog
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+Changelog 1.2.2 - 22 April 2020
+
+- [RedGriffin] Fixed missing getprop() in updateATC() due to unknown editing
+               procedure which unintentionally removed it, who knows why, maybe it
+               was kate editor's pedantic highlighting when searching?
+               I like kate editor (a very nice programmer editor also having Nasal
+               syntax support) but sometimes it is quite annoying when it keeps
+               the text highlighted and you can easily overwrite/replace it. I
+               guess this was the case because it happens quite often.
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+Changelog 1.2.1 - 18 April 2020
+
+- [RedGriffin] Added degreesDifference() function to compute the difference between two headings and turn
+               direction
+- [RedGriffin] When approaching a runway during landing, dialog now shows the correction to runway alignment
+- [RedGriffin] Improved check for radio usability. Some aircrafts have incomplete and/or unusable radio
+               implementations
+- [RedGriffin] Dialog now shows course to current CTR
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+Changelog 1.2.0 - 4 April 2020
+
+- [RedGriffin] Improved key bindings management. It now checks whether the "ctrl" and "shift" are pressed
+               besides checking the actual key binding. This avoids keyboard conflicts in some cases, in
+               particular with "Num Lock" and numerical keypad
+- [RedGriffin] Added "You are already approved in CTR airspace" message
+- [RedGriffin] Added COM3 to comply to the radio configuration of some aircrafts, mainly some airliners
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+Changelog 1.1.0 - 29 March 2020
+
+- [RedGriffin] Better post initialization of dialog buttons
+- [RedGriffin] availableRadioDialog(): Show popup message in case no radio is available
+- [RedGriffin] split FlightGear's native "approach-departure" radio type into separate types
+- [RedGriffin] added getCtrRadio(): it returns the appropriate "departure" or "approach" radio
+               according to flight status and aircraftIsDeparting variable
+- [RedGriffin] increased max_radios to 30
+- [RedGriffin] getNearestRunway() renamed to getApproachingRunway()
+- [RedGriffin] getApproachingRunway(): improved determination of approaching runway, in particular
+               in case airport has "parallel runways" with the same heading
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+Changelog 1.0.0 - 21 March 2020
+
+- [RedGriffin] Production/stable release
+- [RedGriffin] When the aircraft is in approach or ILS mode, dialog shows course and distance to pattern
+               and final points
+- [RedGriffin] Added button for aborting/cancelling approach, ILS and landing requests
+- [RedGriffin] Flight Level buttons and Cancel approach/landing button are shown according to aircraft status
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+Changelog 1.0.0 RC 2 - 8 March 2020
+
+- [RedGriffin] Added Usage / Keys menu item
+- [RedGriffin] Added getRadioVolume function in order to properly determine comm radio volume. Some
+               aircrafts use "volume-selected" property (such as Cessna 172p) whereas others use "volume".
+               The function evaluate both properties and determine volume accordingly
+- [RedGriffin] Disable all ATC operations in case instant replay is active
+- [RedGriffin] Added current flight level request button
+- [RedGriffin] Remapped flight level request keys to ctrl+shift+[4|5|6] and CTR request to ctrl+0
+- [RedGriffin] When the aircraft is not flying over an airport area, dialog shows Altitude, AGL, Heading and Speed
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+Changelog 1.0.0 RC 1 - 1 March 2020
+
+- [RedGriffin] Improved altitude check and determination
+- [RedGriffin] Departure Information: QNH is now correctly spoken
+- [RedGriffin] Improved radio station name normalization in order to avoid pattern confusion
+- [RedGriffin] Altitude determination now properly consider Route Manager's Flight Plan
+- [RedGriffin] Improved flight level requests
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+Changelog 1.0.0 beta 3 - 8 February 2020
+
+- [RedGriffin] runwayInUse() now consider wind direction properly in determining runway
+- [RedGriffin] Implemented CTR airspaces
+- [RedGriffin] Pilot's request messages are now shown on the screen before ATC reply
+- [RedGriffin] ATC now automatically warns the pilot in case the airplane is flying
+               too low or the aircraft is heading towards terrain (such as hills or
+               mountains)
+- [RedGriffin] Implemented flight levels request
+- [RedGriffin] Bug fixes and many improvements
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+Changelog 1.0.0 beta 2 - 8 January 2020
+
+- [RedGriffin] Improved operations with "keyboard mode"
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
+Changelog 1.0.0 beta 1 - 5 January 2020
+
+- [RedGriffin] Initial public release

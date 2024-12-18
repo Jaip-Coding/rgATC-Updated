@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- this file requires FlightGear version 2018.2 or newer -->
+<!--
+
+ Red Griffin ATC - Speaking Air Traffic Controller for FlightGear
+
+ Written and developer by Antonello Biancalana (Red Griffin, IK0TOJ)
+
+ Copyright (C) 2019-2021 Antonello Biancalana
+
+ settings-dialog.xml
+
+ Version 2.3.0 - 7 May 2021
+
+ Red Griffin ATC is an Open Source project and it is licensed
+ under the Gnu Public License v3 (GPLv3)
+
+ Updated 18 Dec 2024 by Jaip
+-->
+
+<PropertyList>
+    <name>settings-dialog</name>
+    <default-padding>4</default-padding>
+    <layout>vbox</layout>
+    <halign>center</halign>
+    <width>300</width>
+
+    <group>
+    <layout>hbox</layout>
+    <empty>
+        <stretch>1</stretch>
+    </empty>
+    <text>
+        <label>Red Griffin ATC Settings</label>
+    </text>
+    <empty>
+        <stretch>1</stretch>
+    </empty>
+    <button>
+        <pref-width>16</pref-width>
+        <pref-height>16</pref-height>
+        <legend></legend>
+        <keynum>27</keynum>
+        <border>2</border>
+        <binding>
+            <command>dialog-apply</command>
+        </binding>
+        <binding>
+            <command>nasal</command>
+            <script><![CDATA[RgATC.applySettings();]]></script>
+        </binding>
+        <binding>
+            <command>dialog-close</command>
+        </binding>
+    </button>
+    </group>
+    <hrule />
+
+    <group>
+        <layout>hbox</layout>
+        <default-padding>8</default-padding>
+
+        <group>
+            <layout>vbox</layout>
+            <valign>top</valign>
+
+            <group>
+                <layout>table</layout>
+                <valign>top</valign>
+
+                <text>
+                    <row>0</row>
+                    <col>0</col>
+                    <halign>left</halign>
+                    <label>Dialog position</label>
+                </text>
+
+                <combo>
+                    <name>dialog-position-combo</name>
+                    <row>0</row>
+                    <col>1</col>
+                    <halign>left</halign>
+                    <property>/rgatc/dialog-position</property>
+                    <value>Top Left</value>
+                    <value>Top Right</value>
+                    <value>Bottom Left</value>
+                    <value>Bottom Right</value>
+                    <editable>false</editable>
+                    <pref-width>180</pref-width>
+                    <halign>fill</halign>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </combo>
+
+                <text>
+                    <row>1</row>
+                    <col>0</col>
+                    <halign>left</halign>
+                    <label>ATC text position</label>
+                </text>
+
+                <combo>
+                    <name>atc-text-position-combo</name>
+                    <row>1</row>
+                    <col>1</col>
+                    <halign>left</halign>
+                    <property>/rgatc/atc-text-position</property>
+                    <value>Top Left</value>
+                    <value>Top Center</value>
+                    <value>Top Right</value>
+                    <value>Middle Left</value>
+                    <value>Middle Center</value>
+                    <value>Middle Right</value>
+                    <value>Bottom Left</value>
+                    <value>Bottom Center</value>
+                    <value>Bottom Right</value>
+                    <editable>false</editable>
+                    <pref-width>180</pref-width>
+                    <halign>fill</halign>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </combo>
+
+                <text>
+                    <row>2</row>
+                    <col>0</col>
+                    <halign>left</halign>
+                    <label>ATC text transparency</label>
+                </text>
+
+                <combo>
+                    <name>atc-text-transparency-combo</name>
+                    <row>2</row>
+                    <col>1</col>
+                    <halign>left</halign>
+                    <property>/rgatc/atc-text-transparency</property>
+                    <value>Off</value>
+                    <value>Very low</value>
+                    <value>Low</value>
+                    <value>Medium</value>
+                    <value>High</value>
+                    <value>Very high</value>
+                    <editable>false</editable>
+                    <pref-width>180</pref-width>
+                    <halign>fill</halign>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </combo>
+
+                <text>
+                    <row>3</row>
+                    <col>0</col>
+                    <halign>left</halign>
+                    <label>Call sign</label>
+                </text>
+
+                <input>
+                    <row>3</row>
+                    <col>1</col>
+                    <pref-width>180</pref-width>
+                    <halign>left</halign>
+                    <property>/rgatc/callsign</property>
+                    <live>true</live>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </input>
+
+                <text>
+                    <row>4</row>
+                    <col>0</col>
+                    <halign>left</halign>
+                    <label>Call sign usage</label>
+                </text>
+
+                <combo>
+                    <name>callsign-mode-combo</name>
+                    <row>4</row>
+                    <col>1</col>
+                    <halign>left</halign>
+                    <property>/rgatc/callsign-mode</property>
+                    <value>Complete</value>
+                    <value>Last three letters</value>
+                    <value>First and last two letters</value>
+                    <editable>false</editable>
+                    <pref-width>180</pref-width>
+                    <halign>fill</halign>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </combo>
+
+                <text>
+                    <row>5</row>
+                    <col>0</col>
+                    <halign>left</halign>
+                    <label>Use phonetic</label>
+                </text>
+
+                <combo>
+                    <name>phonetic-mode-combo</name>
+                    <row>5</row>
+                    <col>1</col>
+                    <halign>left</halign>
+                    <property>/rgatc/phonetic-mode</property>
+                    <value>Yes</value>
+                    <value>No</value>
+                    <editable>false</editable>
+                    <pref-width>180</pref-width>
+                    <halign>fill</halign>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </combo>
+
+                <text>
+                    <row>6</row>
+                    <col>0</col>
+                    <halign>left</halign>
+                    <label>Include manufacturer</label>
+                </text>
+
+                <combo>
+                    <name>include-manufacturer-combo</name>
+                    <row>6</row>
+                    <col>1</col>
+                    <halign>left</halign>
+                    <property>/rgatc/include-manufacturer</property>
+                    <value>Yes</value>
+                    <value>No</value>
+                    <editable>false</editable>
+                    <pref-width>180</pref-width>
+                    <halign>fill</halign>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </combo>
+
+                <text>
+                    <row>7</row>
+                    <col>0</col>
+                    <halign>left</halign>
+                    <label>QNH reported in</label>
+                </text>
+
+                <combo>
+                    <name>qnh-combo</name>
+                    <row>7</row>
+                    <col>1</col>
+                    <halign>left</halign>
+                    <property>/rgatc/qnh</property>
+                    <value>hPa</value>
+                    <value>inHg</value>
+                    <value>hPa and inHg</value>
+                    <editable>false</editable>
+                    <pref-width>180</pref-width>
+                    <halign>fill</halign>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </combo>
+
+                <text>
+                    <row>8</row>
+                    <col>0</col>
+                    <halign>left</halign>
+                    <label>Aircraft type</label>
+                </text>
+
+                <combo>
+                    <name>aircraft-type-combo</name>
+                    <row>8</row>
+                    <col>1</col>
+                    <halign>left</halign>
+                    <property>/rgatc/aircraft-type</property>
+                    <value>Auto</value>
+                    <value>Small single engine</value>
+                    <value>Small multi engine</value>
+                    <value>Executive turboprop/jet</value>
+                    <value>Business jet</value>
+                    <value>Airline jet</value>
+                    <value>Large/military jet</value>
+                    <value>Special military</value>
+                    <editable>false</editable>
+                    <pref-width>180</pref-width>
+                    <halign>fill</halign>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </combo>
+
+                <text>
+                    <row>9</row>
+                    <col>0</col>
+                    <halign>left</halign>
+                    <label>Squawking</label>
+                </text>
+
+                <combo>
+                    <name>squawking-combo</name>
+                    <row>9</row>
+                    <col>1</col>
+                    <halign>left</halign>
+                    <property>/rgatc/squawking</property>
+                    <value>On</value>
+                    <value>Off</value>
+                    <editable>false</editable>
+                    <pref-width>180</pref-width>
+                    <halign>fill</halign>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </combo>
+
+            </group>
+        </group>
+
+        <vrule />
+
+        <group>
+            <layout>vbox</layout>
+            <valign>top</valign>
+
+            <group>
+                <layout>table</layout>
+                <valign>top</valign>
+
+                <text>
+                    <row>0</row>
+                    <col>0</col>
+                    <halign>left</halign>
+                    <label>Open dialog at startup</label>
+                </text>
+
+                <combo>
+                    <name>open-dialog-startup-combo</name>
+                    <row>0</row>
+                    <col>1</col>
+                    <halign>left</halign>
+                    <property>/rgatc/open-dialog-startup</property>
+                    <value>On</value>
+                    <value>Off</value>
+                    <editable>false</editable>
+                    <pref-width>180</pref-width>
+                    <halign>fill</halign>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </combo>
+
+                <text>
+                    <row>1</row>
+                    <col>0</col>
+                    <halign>left</halign>
+                    <label>Pilot request</label>
+                </text>
+
+                <combo>
+                    <name>pilot-request-mode-combo</name>
+                    <row>1</row>
+                    <col>1</col>
+                    <halign>left</halign>
+                    <property>/rgatc/pilot-request-mode</property>
+                    <value>Disabled</value>
+                    <value>Voice only</value>
+                    <value>Text only</value>
+                    <value>Voice and text</value>
+                    <editable>false</editable>
+                    <pref-width>180</pref-width>
+                    <halign>fill</halign>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </combo>
+
+                <text>
+                    <row>2</row>
+                    <col>0</col>
+                    <halign>left</halign>
+                    <label>Pilot response</label>
+                </text>
+
+                <combo>
+                    <name>pilot-response-mode-combo</name>
+                    <row>2</row>
+                    <col>1</col>
+                    <halign>left</halign>
+                    <property>/rgatc/pilot-response-mode</property>
+                    <value>Disabled</value>
+                    <value>Voice only</value>
+                    <value>Text only</value>
+                    <value>Voice and text</value>
+                    <editable>false</editable>
+                    <pref-width>180</pref-width>
+                    <halign>fill</halign>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </combo>
+
+                <text>
+                    <row>3</row>
+                    <col>0</col>
+                    <halign>left</halign>
+                    <label>ATC message</label>
+                </text>
+
+                <combo>
+                    <name>atc-message-mode-combo</name>
+                    <row>3</row>
+                    <col>1</col>
+                    <halign>left</halign>
+                    <property>/rgatc/atc-message-mode</property>
+                    <value>Voice only</value>
+                    <value>Text only</value>
+                    <value>Voice and text</value>
+                    <editable>false</editable>
+                    <pref-width>180</pref-width>
+                    <halign>fill</halign>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </combo>
+
+                <text>
+                    <row>4</row>
+                    <col>0</col>
+                    <halign>left</halign>
+                    <label>ATC radio</label>
+                </text>
+
+                <combo>
+                    <name>atc-radio-combo</name>
+                    <row>4</row>
+                    <col>1</col>
+                    <halign>left</halign>
+                    <property>/rgatc/atc-radio</property>
+                    <value>Auto</value>
+                    <value>COM1</value>
+                    <value>COM2</value>
+                    <value>COM3</value>
+                    <editable>false</editable>
+                    <pref-width>180</pref-width>
+                    <halign>fill</halign>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </combo>
+
+                <text>
+                    <row>5</row>
+                    <col>0</col>
+                    <halign>left</halign>
+                    <label>Too low warning</label>
+                </text>
+
+                <combo>
+                    <name>too-low-combo</name>
+                    <row>5</row>
+                    <col>1</col>
+                    <halign>left</halign>
+                    <property>/rgatc/too-low-warning</property>
+                    <value>On</value>
+                    <value>Off</value>
+                    <editable>false</editable>
+                    <pref-width>180</pref-width>
+                    <halign>fill</halign>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </combo>
+
+                <text>
+                    <row>6</row>
+                    <col>0</col>
+                    <halign>left</halign>
+                    <label>Terrain warning</label>
+                </text>
+
+                <combo>
+                    <name>terrain-combo</name>
+                    <row>6</row>
+                    <col>1</col>
+                    <halign>left</halign>
+                    <property>/rgatc/terrain-warning</property>
+                    <value>On</value>
+                    <value>Off</value>
+                    <editable>false</editable>
+                    <pref-width>180</pref-width>
+                    <halign>fill</halign>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </combo>
+
+                <text>
+                    <row>7</row>
+                    <col>0</col>
+                    <halign>left</halign>
+                    <label>Multiplayer chat</label>
+                </text>
+
+                <combo>
+                    <name>multiplayer-chat-combo</name>
+                    <row>7</row>
+                    <col>1</col>
+                    <halign>left</halign>
+                    <property>/rgatc/multiplayer-chat-echo</property>
+                    <value>Off</value>
+                    <value>Important messages only</value>
+                    <value>All messages</value>
+                    <editable>false</editable>
+                    <pref-width>180</pref-width>
+                    <halign>fill</halign>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </combo>
+
+                <text>
+                    <row>8</row>
+                    <col>0</col>
+                    <halign>left</halign>
+                    <label>Call sign as immatriculation</label>
+                </text>
+
+                <combo>
+                    <name>immatriculation-combo</name>
+                    <row>8</row>
+                    <col>1</col>
+                    <halign>left</halign>
+                    <property>/rgatc/set-immatriculation</property>
+                    <value>Yes</value>
+                    <value>No</value>
+                    <editable>false</editable>
+                    <pref-width>180</pref-width>
+                    <halign>fill</halign>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </combo>
+
+                <text>
+                    <row>9</row>
+                    <col>0</col>
+                    <halign>left</halign>
+                    <label>Approach slope angle</label>
+                </text>
+
+                <input>
+                    <row>9</row>
+                    <col>1</col>
+                    <pref-width>40</pref-width>
+                    <halign>left</halign>
+                    <label>degrees</label>
+                    <property>/rgatc/slope-angle</property>
+                    <live>true</live>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </input>
+
+            </group>
+        </group>
+
+    </group>
+
+    <hrule />
+
+    <group>
+        <layout>hbox</layout>
+
+        <button>
+            <legend>Reset</legend>
+
+            <binding>
+                <command>nasal</command>
+                <script><![CDATA[RgATC.resetSettings();
+
+                    var args = {'subsystem':'gui'};
+
+                    fgcommand("reinit",args);
+                ]]></script>
+            </binding>
+
+        </button>
+
+        <button>
+            <legend>Close</legend>
+
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+
+            <binding>
+                <command>nasal</command>
+                <script><![CDATA[RgATC.applySettings();]]></script>
+            </binding>
+
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+
+        </button>
+
+    </group>
+</PropertyList>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- this file requires FlightGear version 2018.2 or newer -->
+<!--
+
+ Red Griffin ATC - Speaking Air Traffic Controller for FlightGear
+
+ Written and developer by Antonello Biancalana (Red Griffin, IK0TOJ)
+
+ Copyright (C) 2019-2021 Antonello Biancalana
+
+ addon-menubar-items.xml
+
+ Version 2.3.0 - 7 May 2021
+
+ Red Griffin ATC is an Open Source project and it is licensed
+ under the Gnu Public License v3 (GPLv3)
+
+-->
+
+<PropertyList>
+    <meta>
+        <file-type type="string">FlightGear add-on menu bar items</file-type>
+        <format-version type="int">1</format-version>
+    </meta>
+    <menubar-items>
+        <menu>
+            <label>Red Griffin ATC</label>
+            <enabled type="bool">true</enabled>
+
+            <item>
+                <label>Open/Close ATC dialog</label>
+                <binding>
+                    <command>nasal</command>
+                    <script><![CDATA[RgATC.openATCDialog();]]></script>
+                </binding>
+            </item>
+
+            <item>
+                <label>ATC Log</label>
+                <binding>
+                    <command>nasal</command>
+                    <script><![CDATA[RgATC.openAtcLogDialog();]]></script>
+                </binding>
+            </item>
+
+            <item>
+                <label>Usage / Keys</label>
+                <binding>
+                    <command>dialog-show</command>
+                    <dialog-name>help-dialog</dialog-name>
+                </binding>
+            </item>
+
+            <item>
+                <label>Settings</label>
+                <binding>
+                    <command>nasal</command>
+                    <script><![CDATA[RgATC.initSettings();]]></script>
+                </binding>
+                <binding>
+                    <command>dialog-show</command>
+                    <dialog-name>settings-dialog</dialog-name>
+                </binding>
+            </item>
+
+            <item>
+                <label>Turn Red Griffin ATC on/off</label>
+                <binding>
+                    <command>nasal</command>
+                    <script><![CDATA[RgATC.toggleAtc();]]></script>
+                </binding>
+            </item>
+
+            <item>
+                <label>About Red Griffin ATC</label>
+                <binding>
+                    <command>dialog-show</command>
+                    <dialog-name>about-dialog</dialog-name>
+                </binding>
+            </item>
+
+        </menu>
+    </menubar-items>
+</PropertyList>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+ Red Griffin ATC - Speaking Air Traffic Controller for FlightGear
+
+ Written and developer by Antonello Biancalana (Red Griffin, IK0TOJ)
+
+ Copyright (C) 2019-2021 Antonello Biancalana
+
+ addon-metadata.xml
+
+ Version 2.3.0 - 7 May 2021
+
+ Red Griffin ATC is an Open Source project and it is licensed
+ under the Gnu Public License v3 (GPLv3)
+
+-->
+
+<PropertyList>
+  <meta>
+    <file-type type="string">FlightGear add-on metadata</file-type>
+    <format-version type="int">1</format-version>
+  </meta>
+
+  <addon>
+    <identifier type="string">org.flightgear.addons.RGATC</identifier>
+    <name type="string">Red Griffin ATC</name>
+    <version type="string">2.3.0</version>
+
+    <authors>
+      <author>
+        <name type="string">Antonello Biancalana (Red Griffin, IK0TOJ)</name>
+        <email type="string">provinum@gmail.com</email>
+        <url type="string"></url>
+      </author>
+    </authors>
+
+    <maintainers>
+      <maintainer>
+        <name type="string">Antonello Biancalana (Red Griffin, IK0TOJ)</name>
+        <url type="string">
+          https://sourceforge.net/projects/red-griffin-atc
+        </url>
+      </maintainer>
+    </maintainers>
+
+    <short-description type="string">
+      Speaking Air Traffic Controller for FlightGear
+    </short-description>
+
+    <long-description type="string">
+      Speaking Air Traffic Controller simulator for FlightGear. It manages ground operations,
+      take off, approach, ILS, landing procedures, squawking and CTR transitions.
+    </long-description>
+
+    <license>
+      <designation type="string">
+        GNU Public License v3 (GNU GPL version 3 or later)
+      </designation>
+
+      <file type="string">
+        <!-- Use a relative, slash-separated path to a file under the add-on
+             base directory that contains the add-on license text. -->
+      </file>
+
+      <url type="string">
+        https://www.gnu.org/licenses/gpl-3.0.html
+      </url>
+    </license>
+
+    <min-FG-version type="string">2018.2</min-FG-version>
+    <max-FG-version type="string">none</max-FG-version>
+
+    <urls>
+      <home-page type="string">
+        https://sourceforge.net/projects/red-griffin-atc
+      </home-page>
+
+      <download type="string">
+        https://sourceforge.net/projects/red-griffin-atc/files/
+      </download>
+
+      <support type="string">
+        https://sourceforge.net/projects/red-griffin-atc/support
+      </support>
+
+      <code-repository type="string">
+        https://sourceforge.net/p/red-griffin-atc/code/ci/master/tree/
+      </code-repository>
+    </urls>
+
+    <tags>
+      <tag type="string">Antonello Biancalana</tag>
+      <tag type="string">Red Griffin</tag>
+      <tag type="string">IK0TOJ</tag>
+      <tag type="string">ATC</tag>
+      <tag type="string">Air Traffic Controller</tag>
+      <tag type="string">Voice</tag>
+      <tag type="string">Speak</tag>
+      <tag type="string">Talk</tag>
+      <tag type="string">Ground</tag>
+      <tag type="string">Take off</tag>
+      <tag type="string">Approach</tag>
+      <tag type="string">ILS</tag>
+      <tag type="string">Landing</tag>
+      <tag type="string">CTR</tag>
+      <tag type="string">Controlled Traffic Region</tag>
+      <tag type="string">Flight Level</tag>
+    </tags>
+  </addon>
+</PropertyList>

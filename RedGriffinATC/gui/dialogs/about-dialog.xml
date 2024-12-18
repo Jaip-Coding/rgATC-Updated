@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- this file requires FlightGear version 2018.2 or newer -->
+<!--
+
+ Red Griffin ATC - Speaking Air Traffic Controller for FlightGear
+
+ Written and developer by Antonello Biancalana (Red Griffin, IK0TOJ)
+
+ Copyright (C) 2019-2021 Antonello Biancalana
+
+ about-dialog.xml
+
+ Version 2.3.0 - 7 May 2021
+
+ Red Griffin ATC is an Open Source project and it is licensed
+ under the Gnu Public License v3 (GPLv3)
+
+-->
+<PropertyList>
+    <name>about-dialog</name>
+    <default-padding>4</default-padding>
+    <layout>vbox</layout>
+    <halign>center</halign>
+    <width>300</width>
+
+    <text>
+        <label>About</label>
+    </text>
+
+    <hrule />
+
+    <text>
+        <label>Red Griffin ATC</label>
+    </text>
+
+    <text>
+        <label>Version 2.3.0 - 7 May 2021</label>
+    </text>
+
+    <hrule />
+
+    <text>
+        <label>Written by</label>
+    </text>
+
+    <text>
+	<label>Antonello Biancalana</label>
+    </text>
+
+    <text>
+	<label>(Red Griffin, IK0TOJ)</label>
+    </text>
+
+    <hrule />
+
+    <text>
+	<label>URL: https://sourceforge.net/projects/red-griffin-atc</label>
+    </text>
+
+    <hrule />
+
+    <button>
+        <legend>Close</legend>
+	<binding>
+            <command>dialog-close</command>
+        </binding>
+    </button>
+
+</PropertyList>

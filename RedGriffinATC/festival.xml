@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<PropertyList>
+  <sim>
+    <sound>
+      <voice type="bool">true</voice>
+      <voices>
+        <enabled type="bool">true</enabled>
+        <voice>
+          <desc>Pilot</desc>
+          <text type="string"/>
+          <volume type="double">1.0</volume>
+          <pitch type="double">100.0</pitch>
+          <speed type="double">0.8</speed>
+          <preamble type="string">(voice_cmu_us_rms_cg) (audio_mode 'async)</preamble>
+          <festival type="bool">true</festival>
+          <htsvoice type="string">cstr_uk_female-1.0.htsvoice</htsvoice>
+        </voice>
+        <voice>
+          <desc>Ahw</desc>
+          <text type="string"/>
+          <volume type="double">1.0</volume>
+          <pitch type="double">100.0</pitch>
+          <speed type="double">0.9</speed>
+          <preamble type="string">(voice_cmu_us_ahw_cg) (audio_mode 'async)</preamble>
+          <festival type="bool">true</festival>
+          <htsvoice type="string">cmu_us_arctic_slt.htsvoice</htsvoice>
+        </voice>
+        <voice>
+          <desc>Eey</desc>
+          <text type="string"/>
+          <volume type="double">1.0</volume>
+          <pitch type="double">100.0</pitch>
+          <speed type="double">1</speed>
+          <preamble type="string">(voice_cmu_us_eey_cg) (audio_mode 'async)</preamble>
+          <festival type="bool">true</festival>
+          <htsvoice type="string">cmu_us_arctic_slt.htsvoice</htsvoice>
+        </voice>
+        <voice>
+          <desc>Bdl</desc>
+          <text type="string"/>
+          <volume type="double">1.0</volume>
+          <pitch type="double">100.0</pitch>
+          <speed type="double">1</speed>
+          <preamble type="string">(voice_cmu_us_bdl_cg) (audio_mode 'async)</preamble>
+          <festival type="bool">true</festival>
+          <htsvoice type="string">cmu_us_arctic_slt.htsvoice</htsvoice>
+        </voice>
+        <voice>
+          <desc>Rxr</desc>
+          <text type="string"/>
+          <volume type="double">1.0</volume>
+          <pitch type="double">100.0</pitch>
+          <speed type="double">1</speed>
+          <preamble type="string">(voice_cmu_us_rxr_cg) (audio_mode 'async)</preamble>
+          <festival type="bool">true</festival>
+          <htsvoice type="string">cmu_us_arctic_slt.htsvoice</htsvoice>
+        </voice>
+        <voice>
+          <desc>Clb</desc>
+          <text type="string"/>
+          <volume type="double">1.0</volume>
+          <pitch type="double">100.0</pitch>
+          <speed type="double">0.8</speed>
+          <preamble type="string">(voice_cmu_us_clb_cg) (audio_mode 'async)</preamble>
+          <festival type="bool">true</festival>
+          <htsvoice type="string">cmu_us_arctic_slt.htsvoice</htsvoice>
+        </voice>
+        <voice>
+          <desc>Jmk</desc>
+          <text type="string"/>
+          <volume type="double">1.0</volume>
+          <pitch type="double">100.0</pitch>
+          <speed type="double">1.0</speed>
+          <preamble type="string">(voice_cmu_us_jmk_cg) (audio_mode 'async)</preamble>
+          <festival type="bool">true</festival>
+          <htsvoice type="string">cmu_us_arctic_slt.htsvoice</htsvoice>
+        </voice>
+        <voice>
+          <desc>Lnh</desc>
+          <text type="string"/>
+          <volume type="double">1.0</volume>
+          <pitch type="double">100.0</pitch>
+          <speed type="double">0.9</speed>
+          <preamble type="string">(voice_cmu_us_lnh_cg) (audio_mode 'async)</preamble>
+          <festival type="bool">true</festival>
+          <htsvoice type="string">cmu_us_arctic_slt.htsvoice</htsvoice>
+        </voice>
+        <voice>
+          <desc>Slt</desc>
+          <text type="string"/>
+          <volume type="double">1.0</volume>
+          <pitch type="double">100.0</pitch>
+          <speed type="double">1.0</speed>
+          <preamble type="string">(voice_cmu_us_slt_cg) (audio_mode 'async)</preamble>
+          <festival type="bool">true</festival>
+          <htsvoice type="string">cmu_us_arctic_slt.htsvoice</htsvoice>
+        </voice>
+        <voice>
+          <desc>Ljm</desc>
+          <text type="string"/>
+          <volume type="double">1.0</volume>
+          <pitch type="double">100.0</pitch>
+          <speed type="double">1.0</speed>
+          <preamble type="string">(voice_cmu_us_ljm_cg) (audio_mode 'async)</preamble>
+          <festival type="bool">true</festival>
+          <htsvoice type="string">cmu_us_arctic_slt.htsvoice</htsvoice>
+        </voice>
+      </voices>
+    </sound>
+  </sim>
+</PropertyList>
